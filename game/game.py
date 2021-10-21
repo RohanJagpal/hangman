@@ -17,7 +17,7 @@ class Hangman:
     def __generateWord(self) -> str:
         with open('game/en', 'r') as f:
             word = ""
-            while len(word) < self.__minWordLength:
+            while len(word) < self.__minWordLength and word.lower() != word:
                 word = choice(f.read().splitlines())
             for letter in word:
                 self.__state += "_"
