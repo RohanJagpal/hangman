@@ -54,10 +54,10 @@ class Hangman:
     def run(self) -> None:
         self.__word = self.__generateWord()
         while self.__state != self.__word:
-            clear()
             if self.__remaining > 0:
+                clear()
                 print(self.__state)
                 self.__state = self.__guess()
             else:
-                print(f"You ran out of guesses!\nThe correct word was{self.__word}.")
+                print(f"You ran out of guesses!\nThe correct word was {self.__word}.")
         print("You guessed the word!")       
