@@ -1,4 +1,11 @@
 from random import choice
+from os import system, name
+
+def clear():
+    if name =="nt":
+        _ = system("cls")
+    else:
+        _=system("clear")
 
 class Hangman:
     def __init__(self, minWordLength: int = 3, tries: int = 11) -> None:
@@ -47,6 +54,7 @@ class Hangman:
     def run(self) -> None:
         self.__word = self.__generateWord()
         while self.__state != self.__word:
+            clear()
             if self.__remaining > 0:
                 print(self.__state)
                 self.__state = self.__guess()
